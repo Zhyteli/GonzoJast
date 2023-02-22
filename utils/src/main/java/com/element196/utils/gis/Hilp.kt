@@ -3,60 +3,64 @@ package com.element196.utils.gis
 import android.content.res.Resources
 import androidx.core.net.toUri
 import com.element196.utils.R
-import com.element196.utils.element.Naming
+import com.element196.utils.element.GOpd
 
 class Hilp(
-    private val res: Resources
+    private val hdth: Resources
 ) {
     fun ios(
-        gadid: String,
-        fData: String,
+        rehgtr: String,
+        yht: String,
         resultF: String,
-        naming: Naming?,
+        GOpd: GOpd?,
         resultU: String,
         time:String
-    ) = "https://" + "gonzosarmour.store/gonzo.php".toUri().buildUpon().apply {
+    ) = "https://" + fergtr().buildUpon().apply {
         appendQueryParameter(
-            res.getString(R.string.secure_get_parametr),
-            res.getString(R.string.secure_key)
+            hdth.getString(R.string.grethtr),
+            hdth.getString(R.string.grrh)
         )
         appendQueryParameter(
-            res.getString(R.string.dev_tmz_key),
+            hdth.getString(R.string.gvdbt),
             time
         )
-        appendQueryParameter(res.getString(R.string.gadid_key), gadid)
-        appendQueryParameter(res.getString(R.string.deeplink_key), fData)
+        appendQueryParameter(hdth.getString(R.string.hdbft), rehgtr)
+        appendQueryParameter(hdth.getString(R.string.hrte), yht)
         appendQueryParameter(
-            res.getString(R.string.source_key),
+            hdth.getString(R.string.hbtrh),
             resultF
         )
         appendQueryParameter(
-            res.getString(R.string.af_id_key), resultU
+            hdth.getString(R.string.greg), resultU
         )
         appendQueryParameter(
-            res.getString(R.string.adset_id_key),
+            hdth.getString(R.string.yhgrg),
             "null"
         )
         appendQueryParameter(
-            res.getString(R.string.campaign_id_key),
-            naming?.campaign_id.toString()
+            hdth.getString(R.string.srgtrh),
+            GOpd?.sdg.toString()
         )
         appendQueryParameter(
-            res.getString(R.string.app_campaign_key),
-            naming?.campaign_group_name.toString()
+            hdth.getString(R.string.yhtrh),
+            GOpd?.gsd.toString()
         )
         appendQueryParameter(
-            res.getString(R.string.adset_key),
-            naming?.ad_objective_name.toString()
+            hdth.getString(R.string.rhtr),
+            GOpd?.db.toString()
         )
-        appendQueryParameter(res.getString(R.string.adgroup_key), naming?.adgroup_name.toString())
+        appendQueryParameter(hdth.getString(R.string.hrrth), GOpd?.rgs.toString())
         appendQueryParameter(
-            res.getString(R.string.orig_cost_key),
+            hdth.getString(R.string.yhythty),
             "null"
         )
         appendQueryParameter(
-            res.getString(R.string.af_siteid_key),
+            hdth.getString(R.string.freg),
             "null"
         )
     }.toString()
+
+    private fun fergtr() = grthgtrh().toUri()
+
+    private fun grthgtrh() = "gonzosarmour.store/gonzo.php"
 }

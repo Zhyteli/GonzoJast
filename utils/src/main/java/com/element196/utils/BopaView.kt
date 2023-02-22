@@ -1,9 +1,8 @@
 package com.element196.utils
 
 import android.app.Activity
-import android.util.Log
 import androidx.lifecycle.ViewModel
-import com.element196.utils.element.Naming
+import com.element196.utils.element.GOpd
 import com.element196.utils.gis.Hilp
 import com.element196.utils.leta.Control
 import com.element196.utils.leta.Control.mainControl
@@ -24,45 +23,59 @@ class BopaView : ViewModel() {
         Control.contr.collect {
             when (it == "null") {
                 true -> {
-                    val nm: Naming? = vorshav(context)
+                    val nm: GOpd? = vorshav(context)
                     assetFunMain(context, it, nm)
                 }
                 false -> assetFunMain(context, it, null)
             }
         }
     }
-
-    private suspend fun assetFunMain(context: Activity, fios: String, nm: Naming?) {
-        val gadid = jifer(context)
-        OneSignal.setExternalUserId(gadid)
+    val dewf = "key2"
+    private suspend fun assetFunMain(context: Activity, fios: String, nm: GOpd?) {
+        val gtr = jifer(context)
+        OneSignal.setExternalUserId(gtr)
         val time = TimeZone.getDefault().id
         val koba = Hilp(context.application.resources)
+        OneSignal.initWithContext(context)
+        OneSignal.setAppId("e21b9579-844a-449a-ad6a-d36524109ccc")
+        val fref = nm?.gsd.toString()
+        dwegfewrgerger(fios,fref)
         if (fios == "null") {
             val resultF = nm?.let { "Facebook Naming" } ?: "null"
             val resultU = nm?.let { UUID.randomUUID().toString() } ?: "null"
-            mainControl.emit(koba.ios(gadid, fios, resultF, nm, resultU, time))
+            mainControl.emit(koba.ios(gtr, fios, resultF, nm, resultU, time))
         } else {
             val resultF = "deeplink"
             val resultU = "null"
-            mainControl.emit(koba.ios(gadid, fios, resultF, nm, resultU, time))
+            mainControl.emit(koba.ios(gtr, fios, resultF, nm, resultU, time))
+        }
+    }
+    private fun dwegfewrgerger(Dwefwe: String, dwef:String) {
+        if (wefre(dwef, Dwefwe)) {
+            OneSignal.sendTag(dewf, "organic")
+        } else if (Dwefwe != "null") {
+            OneSignal.sendTag(dewf, Dwefwe.replace("myapp://", "").substringBefore("/"))
+        } else if (dwef != "null") {
+            OneSignal.sendTag(dewf, dwef.substringBefore("_"))
         }
     }
 
+    private fun wefre(dewf: String, data2: String) = dewf == "null" && ewf(data2)
+
+    private fun ewf(data2: String) = data2 == "null"
     private suspend fun jifer(context: Activity): String {
-        val gadid = withContext(Dispatchers.Default) {
+        val fregerg = withContext(Dispatchers.Default) {
             AdvertisingIdClient.getAdvertisingIdInfo(
                 context
             ).id.toString()
         }
-        return gadid
+        return fregerg
     }
 
-    private suspend fun vorshav(context: Activity): Naming? {
-        val nm: Naming? =
-            if (saiMyName(context).toString() != "null") Gson().fromJson(
-                saiMyName(context),
-                Naming::class.java
-            ) else null
-        return nm
+    private suspend fun vorshav(context: Activity): GOpd? {
+        return if (saiMyName(context).toString() != "null") Gson().fromJson(
+            saiMyName(context),
+            GOpd::class.java
+        ) else null
     }
 }

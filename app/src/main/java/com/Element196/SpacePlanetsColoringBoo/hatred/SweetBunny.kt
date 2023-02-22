@@ -1,9 +1,9 @@
 package com.Element196.SpacePlanetsColoringBoo.hatred
 
 import android.app.Application
-import com.element196.utility.element.DaoMaster
-import com.element196.utility.element.DaoSession
-import com.element196.utility.element.GonDo
+import com.element196.utils.element.DaoMaster
+import com.element196.utils.element.DaoSession
+import com.element196.utils.element.GonDo
 
 
 class SweetBunny:Application() {
